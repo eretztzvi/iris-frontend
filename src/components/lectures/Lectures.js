@@ -26,9 +26,18 @@ const useStyles = makeStyles({
     },
     header_box: {
         // border: '1px solid',
+        width: '70%',
+        margin: 'auto',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    header_box_mobile: {
+        // border: '1px solid',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '20px'
     },
     lectures_box: {
         display: 'flex',
@@ -51,7 +60,7 @@ const useStyles = makeStyles({
     },
     lecture_card: {
         width: '90%',
-        border: '1px solid gray',
+        border: '1px solid #ced4da',
         padding: '20px',
         height: '200px',
         display: 'flex',
@@ -62,8 +71,30 @@ const useStyles = makeStyles({
         margin: 'auto',
         '& h6': {
             textAlign: 'center'
-        }
+        },
+        
+    },
+    lecture_card_mobile: {
+        width: '90%',
+        borderTop: '1px solid #ced4da',
+        borderBottom: '1px solid #ced4da',
+        borderLeft: 'none',
+        borderRight: 'none',
+        padding: '20px',
+        height: '200px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: "0px !important",
+        // boxShadow: 'rgba(149, 157, 165, 0.2) 0px 8px 24px !important',
+        boxShadow: 'none',
+        margin: 'auto',
+        '& h6': {
+            textAlign: 'center'
+        },
+        
     }
+
 
 })
 
@@ -78,8 +109,8 @@ export default function Lectures() {
     return (
         <Box className={isDesktop ? styles.root : styles.root_mobile}>
 
-            <Box className={styles.header_box}>
-                <Typography variant="h3">הרצאות</Typography>
+            <Box className={isDesktop ? styles.header_box : styles.header_box_mobile}>
+                <Typography variant="h3" sx={{fontWeight: 'bold'}}>הרצאות</Typography>
             </Box>
 
             <Box className={isDesktop ? styles.lectures_box : styles.lectures_box_mobile}>
@@ -95,7 +126,7 @@ export default function Lectures() {
                 >
                     {lectures.map((lecture, index) => (
                         <SwiperSlide key={index} >
-                            <Card className={styles.lecture_card}>
+                            <Card className={isDesktop ? styles.lecture_card : styles.lecture_card_mobile}>
                                 <Typography variant="h6">{lecture.title}</Typography>
                             </Card>
                         </SwiperSlide>

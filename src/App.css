@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Heebo&family=Rubik:wght@300&family=Suez+One&display=swap');
+
 * {
   /* font-family: "Rubik", sans-serif !important; */
   /* font-family: "ploni",  !important; */
-  font-family: '"Open Sans", sans-serif !important;';
+  font-family: 'Assistant', sans-serif;
+
+  cursor:default;
 }
 
 body,
@@ -14,4 +18,8 @@ html,
 
 body {
   direction: rtl;
+}
+
+::selection {
+  background: transparent;
 }

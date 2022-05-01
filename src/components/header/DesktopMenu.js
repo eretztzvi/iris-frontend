@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import { navBarConfig } from './NavBarConfig';
 import LOGO from '../../assets/iris-logo.gif'
 import { colors } from '../../utils';
+import { createTheme } from '@mui/material/styles';
 
 const useStyles = makeStyles({
     root: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
         height: 48,
         padding: '0 30px',
         margin: '0 10px !important',
-        fontWeight: 'bold !important',
+        // fontWeight: 'bold !important',
         fontSize: '17px !important'
     },
     nav_btn: {
@@ -29,8 +30,6 @@ const useStyles = makeStyles({
         fontSize: '17px !important'
     }
 })
-
-
 
 export default function DesktopMenu(props) {
 
@@ -56,7 +55,7 @@ export default function DesktopMenu(props) {
         <>
             {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
-                <AppBar color='transparent'>
+                <AppBar color='neutral' sx={{boxShadow: ' rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'}}>
                     <Toolbar className={styles.root}>
                         <img src={LOGO} />
                         <Box>

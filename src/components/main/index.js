@@ -33,8 +33,19 @@ const useStyles = makeStyles({
       textAlign: 'center',
     },
     main_box_mobile_min: {
-      
+
     }
+  },
+  img: {
+    width: '100%',
+    borderRadius: '30px',
+    transition: '.2s',
+    '&:hover': {
+      transform: 'rotate(-1deg)'
+    }
+  },
+  img_mobile: {
+    width: '100%',
   }
 })
 
@@ -53,7 +64,9 @@ export default function Main() {
         <Grid item xs={12} md={4} lg={4}>
 
           <Box className={isDesktop ? styles.main_box : styles.main_box_mobile}>
-            <Typography variant="h1">איריס ירדני</Typography>
+            <Typography variant="h1" sx={{letterSpacing: '2px', fontWeight: 'bold'}}>איריס ירדני</Typography>
+            <br />
+            <br />
             <Typography variant="body1" width="80%" sx={{ fontSize: '20px' }}>עומדת בראש  משרד בוטיק שהוקם בשנת 1998, ומתמחה בליווי משפטי לעסקים קטנים ובינוניים, דיני עבודה ובתחום דיני הירושה (עריכת צוואות) ומוסמכת לערוך ייפוי כוח מתמשך, בעלת ניסיון מקצועי רב-שנים, ומהווה בת סמכא בתחומי התמחותה.</Typography>
 
           </Box>
@@ -63,7 +76,7 @@ export default function Main() {
         <Grid item xs={12} md={4} lg={4}>
 
           <Box className={isDesktop ? styles.main_box : styles.main_box_mobile_min}>
-            <img width="100%" src={IRIS} />
+            <img src={IRIS} className={isDesktop ? styles.img : styles.img_mobile} />
           </Box>
 
         </Grid>
