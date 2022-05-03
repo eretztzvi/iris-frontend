@@ -56,6 +56,10 @@ export default function DesktopMenu(props) {
         scroll.scrollTo(to)
     }
 
+    const handleLectureInvitation = () => {
+        window.open('mailto:iris@yalaw.co.il ');
+    }
+
     return (
         <>
             {/* <CssBaseline /> */}
@@ -65,7 +69,7 @@ export default function DesktopMenu(props) {
                         <img src={LOGO} />
                         <Box>
                             {navBarConfig.map((nav, index) => (
-                                <Button onClick={() => scrollTo(nav.scroll_to)} className={nav.type === "main" ? styles.main_btn : styles.nav_btn} key={index}>{nav.title}</Button>
+                                <Button onClick={nav.type === "main" ? handleLectureInvitation : () => scrollTo(nav.scroll_to)} className={nav.type === "main" ? styles.main_btn : styles.nav_btn} key={index}>{nav.title}</Button>
                             ))}
                         </Box>
                     </Toolbar>

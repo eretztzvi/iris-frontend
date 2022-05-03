@@ -23,3 +23,8 @@ body {
 ::selection {
   background: transparent;
 }
+
+.css-fcjhe2-MuiButtonBase-root-MuiFab-root-MuiSpeedDial-fab{
+  width: 70px !important;
+  height: 70px !important;
+}

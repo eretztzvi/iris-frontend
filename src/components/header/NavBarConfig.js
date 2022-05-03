@@ -10,13 +10,13 @@ export const navBarConfig = [
         type: "secondary",
     },
     {
-        title: "מי אני",
-        scroll_to: 200,
+        title: "ביקורות",
+        scroll_to: 1400,
         type: "secondary",
     },
     {
-        title: "מדברים עלי",
-        scroll_to: 300,
+        title: "תמונות",
+        scroll_to: 2000,
         type: "secondary",
     },
 ]

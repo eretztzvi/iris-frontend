@@ -126,7 +126,7 @@ export default function Reviews() {
         <Box className={isDesktop ? styles.root : styles.root_mobile}>
 
             <Box className={isDesktop ? styles.header_box : styles.header_box_mobile}>
-                <Typography variant="h3" sx={{ fontWeight: 'bold', textAlign: 'left' }}>מדברים עלי</Typography>
+                <Typography variant="h3" sx={{ fontWeight: 'bold', textAlign: 'left' }}>ביקורות</Typography>
             </Box>
 
             <Box className={isDesktop ? styles.reviews_box : styles.reviews_box_mobile}>

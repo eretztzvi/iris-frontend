@@ -46,15 +46,19 @@ export default function MobileMenu(props) {
         );
     }
 
+    const handleLectureInvitation = () => {
+        window.open('mailto:iris@yalaw.co.il ');
+    }
+
     return (
         <>
             {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
-                <AppBar color='neutral' sx={{boxShadow: ' rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'}}>
+                <AppBar color='neutral' sx={{ boxShadow: ' rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;' }}>
                     <Toolbar className={styles.root}>
                         <img src={LOGO} />
                         <Box>
-                            <Button className={styles.main_btn} >הזמן הרצאה</Button>
+                            <Button className={styles.main_btn} onClick={handleLectureInvitation} >הזמן הרצאה</Button>
                         </Box>
                     </Toolbar>
                 </AppBar>

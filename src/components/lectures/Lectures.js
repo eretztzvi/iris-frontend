@@ -72,16 +72,16 @@ const useStyles = makeStyles({
         '& h6': {
             textAlign: 'center'
         },
-        
+
     },
     lecture_card_mobile: {
-        width: '90%',
+        // width: '90%',
         borderTop: '1px solid #ced4da',
         borderBottom: '1px solid #ced4da',
         borderLeft: 'none',
         borderRight: 'none',
-        padding: '20px',
-        height: '400px',
+        padding: '0 30px',
+        height: '350px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -92,7 +92,7 @@ const useStyles = makeStyles({
         '& h6': {
             textAlign: 'center'
         },
-        
+
     }
 
 
@@ -110,7 +110,7 @@ export default function Lectures() {
         <Box className={isDesktop ? styles.root : styles.root_mobile}>
 
             <Box className={isDesktop ? styles.header_box : styles.header_box_mobile}>
-                <Typography variant="h3" sx={{fontWeight: 'bold'}}>הרצאות</Typography>
+                <Typography variant="h3" sx={{ fontWeight: 'bold' }}>הרצאות</Typography>
             </Box>
 
             <Box className={isDesktop ? styles.lectures_box : styles.lectures_box_mobile}>
@@ -128,7 +128,7 @@ export default function Lectures() {
                     {lectures.map((lecture, index) => (
                         <SwiperSlide key={index} >
                             <Card className={isDesktop ? styles.lecture_card : styles.lecture_card_mobile}>
-                                <Typography variant="h6">{lecture.title}</Typography>
+                                <Typography variant="h5" sx={{ fontWeight: 'bold' , textAlign: 'center'}}>{lecture.title}</Typography>
                             </Card>
                         </SwiperSlide>
                     ))}
