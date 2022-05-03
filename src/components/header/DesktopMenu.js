@@ -5,6 +5,7 @@ import { navBarConfig } from './NavBarConfig';
 import LOGO from '../../assets/iris-logo.gif'
 import { colors } from '../../utils';
 import { createTheme } from '@mui/material/styles';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 const useStyles = makeStyles({
     root: {
@@ -51,22 +52,26 @@ export default function DesktopMenu(props) {
         );
     }
 
+    const scrollTo = to => {
+        scroll.scrollTo(to)
+    }
+
     return (
         <>
             {/* <CssBaseline /> */}
             <HideOnScroll {...props}>
-                <AppBar color='neutral' sx={{boxShadow: ' rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;'}}>
+                <AppBar color='neutral' sx={{ boxShadow: ' rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;' }}>
                     <Toolbar className={styles.root}>
                         <img src={LOGO} />
                         <Box>
                             {navBarConfig.map((nav, index) => (
-                                <Button className={nav.type === "main" ? styles.main_btn : styles.nav_btn} key={index}>{nav.title}</Button>
+                                <Button onClick={() => scrollTo(nav.scroll_to)} className={nav.type === "main" ? styles.main_btn : styles.nav_btn} key={index}>{nav.title}</Button>
                             ))}
                         </Box>
                     </Toolbar>
                 </AppBar>
             </HideOnScroll>
-           
+
         </>
     )
 }
